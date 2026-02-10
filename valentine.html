@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Be My Valentine 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #5a1a2e;
+    }
+
+    .page {
+      display: none;
+      background: rgba(255, 255, 255, 0.92);
+      padding: 40px;
+      border-radius: 25px;
+      max-width: 800px;
+      width: 90%;
+      box-shadow: 0 25px 50px rgba(255, 77, 109, 0.25);
+      text-align: center;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .page.active { display: block; }
+
+    h1, h2 { margin-bottom: 20px; }
+
+    button {
+      padding: 12px 30px;
+      margin: 10px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    /* First page buttons */
+    #page1 .yes { background: #adb5bd; color: white; } /* dull */
+    #page1 .no { background: #ff4d6d; color: white; } /* red */
+
+    /* Second page buttons */
+    #page2 .yes { background: #ff4d6d; color: white; } /* red */
+    #page2 .no { background: #adb5bd; color: white; } /* dull */
+
+     /* Third page buttons */
+    #page3 .yes { background: #ff4d6d; color: white; } /* red */
+    
+    .letter {
+      text-align: left;
+      font-family: "Playwrite New Zealand Basic", cursive;
+      line-height: 1.8;
+      font-size: 18px;
+      margin-top: 20px;
+      white-space: pre-wrap;
+      color: #2f2f2f;
+    }
+
+    .proposal {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px dashed #ffb3c1;
+      text-align: center;
+    }
+
+    .proposal-text {
+      color: #ff4d6d;
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .emoji {
+      font-size: 40px;
+      margin: 20px 0;
+    }
+
+    img {
+      max-width: 200px;
+      border-radius: 18px;
+      margin-top: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .page1-small {
+      font-size: 18px;
+    }
+
+    .page1-big {
+      font-size: 24px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 10px 0;
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1 -->
+  <div class="page active" id="page1">
+    <h1>Do you have any plans on Feb 14th (Saturday)? 💕</h1>
+
+    <div class="upload-box">
+      <p>Our favourite memory 💖</p>
+      <img id="preview" src="your-image1.jpeg" alt="Our memory" />
+    </div>
+
+    <button class="yes" onclick="page1Yes()">Yes</button>
+    <button class="no" onclick="goToPage('page2')">No</button>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" id="page2">
+    <h2>My love,</h2>
+
+    <div class="letter">
+I’ve been thinking a lot before writing this, because some feelings deserve more than just a casual text. They deserve honesty, warmth, and a little courage.
+
+You mean more to me than I say out loud. In the quiet moments of my day, in the random thoughts that make me smile, somehow you’re always there. Loving you hasn’t been loud or dramatic for me—it’s been calm, deep, and real. You feel like comfort, like home, like someone my heart chose without asking my mind for permission.
+
+I also want you to know this—I'm never bored with you. I love doing even the smallest, most ordinary things with you, things I usually wouldn’t enjoy with anyone else. The silly games we played in Board4Boards, the badly reviewed movies we still watched anyway, the comfortable silences during our calls, the same restaurants we keep going back to every time (even when I pretend to hate it). Somehow, everything with you comes with a sense of peace and quiet joy. I feel comfortable even in the tiniest moments we share, and that comfort means more to me than grand gestures ever could.
+
+With Valentine’s Day coming up, and celebrating and loving you for two years, I just wanted to pause and didn’t want to let it pass without asking—from my heart to yours.
+
+Will you be my Valentine?
+
+Not just for the day with roses or chocolates, but for the small moments too. For the laughs, the late talks, the silly fights, the silent understanding, and everything in between. I don’t promise perfection, but I promise sincerity, love, and a heart that chooses you every day.
+
+No matter your answer, know this—I’m grateful for you, for us, and for the way you make my world a little warmer just by being in it.
+
+Always yours,
+Varsha 💌
+
+<div class="proposal">
+  <p class="proposal-text">WILL YOU BE MY VALENTINE TRIYAAMBAKAMMM?</p>
+  <button class="yes" onclick="goToPage('page4')">Yes</button>
+  <button class="no" onclick="goToPage('page3')">No</button>
+</div>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" id="page3">
+    <div class="emoji">😠🔪</div>
+    <h2>You have no option hun! &lt;3</h2>
+    <p>Love you 😘</p>
+    <button class="yes" onclick="goToPage('page4')">Yes</button>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" id="page4">
+    <div class="emoji">💖💖💖</div>
+    <h1>I LOVE YOUUUUU ❤️</h1>
+  </div>
+
+  <script>
+    function goToPage(id) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    // Use template literal to allow multi-line text safely
+  
+    function page1Yes() {
+    document.querySelector('#page1 h1').innerHTML = `
+      <span class="page1-small">
+        I’M ASSUMING YOU CLICKED IT BY MISTAKE 😂🔪 <br>
+        I’LL GIVE YOU ANOTHER CHANCE, HUN 😌
+      </span>
+      <br>
+      <span class="page1-big">
+        Do you have any plans on Feb 14th (Saturday)? 😌
+      </span>
+      <span class="page1-small">
+        (Because you can’t spend it anywhere else but with me 😠😊💘)
+      </span>
+    `;
+    }
+  </script>
+
+</body>
+</html>
